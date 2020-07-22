@@ -32,7 +32,7 @@
                 </ul>
 
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="myjq2">
                     <span class="fa fa-sign-in"></span> Login</a>
                 </span>
 
@@ -46,7 +46,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Login </h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <button type="button" class="close" id="close2">&times;</button>
                     </div>
                 <div class="modal-body">
                     <form>
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="close3">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                         </div>
                     </form>
@@ -82,7 +82,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title"> Reserve a table </h3>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="close">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -138,7 +138,7 @@
 
                         <div class="form-group row">
                             <div class="col-md-10 offset-md-2">
-                                <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancel</button>
+                                <button type="button" id="close1" class="btn btn-secondary">Cancel</button>
                                 <button type="submit" class="btn btn-primary">Reserve</button>
                             </div>
                         </div>
@@ -159,7 +159,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a data-target="#reservemodal" class="btn btn-warning btn-sm btn-block" data-toggle="modal"><h4>Reserve Table</h4></a>
+                    <a class="btn btn-warning btn-sm btn-block" id="myjq"><h4>Reserve Table</h4></a>
                 </div>
             </div>
         </div>
@@ -307,6 +307,24 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function(){
+            $("#myjq").click(function(){
+                $("#reservemodal").modal("toggle");
+            });
+            $("#myjq2").click(function(){
+                $("#loginModal").modal("toggle");
+            });
+            $("#close").click(function(){
+                $("#reservemodal").modal("hide");
+            });
+            $("#close1").click(function(){
+                $("#reservemodal").modal("hide");
+            });
+            $("#close2").click(function(){
+                $("#loginModal").modal("hide");
+            });
+            $("#close3").click(function(){
+                $("#loginModal").modal("hide");
+            });
             $("#mycarousel").carousel( { interval: 2000 } );
             $("#carouselButton").click(function()
             {
